@@ -30,6 +30,18 @@ print(haha[-1])
 sss = list("RRDDRRDRDR")
 print(sss[2:])
 
-[["1","1","1"],
- ["0","1","0"],
- ["1","1","1"]]
+
+rooms = [[1, 2], [2, 1], [1]]
+visited = deque()
+keys = deque()
+
+keys.append(0)
+
+while keys:
+    key = keys.pop()
+
+    visited.append(key)
+    for k in rooms[key]:
+        if k not in visited and k not in keys:
+            keys.append(k)
+            print(k, visited, keys)
